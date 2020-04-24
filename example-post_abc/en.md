@@ -38,4 +38,4 @@ Numbered list:
 
 An [example](http://example.com).
 
-![Image](Icon-pictures.png "icon")
+![Image](example.png "Super Image")
