@@ -1,5 +1,3 @@
-![](f1.jpg)
-
 **How to use GoPro7**
 ==
 

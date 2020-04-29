@@ -1,5 +1,3 @@
-![](s1.jpg)
-
 **Remote Control**
 ==
 

@@ -1,5 +1,3 @@
-![](d1.jpg)
-
 **How to connect Mevo**
 ==
 

@@ -1,5 +1,3 @@
-![](g1.jpg)
-
 **VidiU Teradek: connection issue**
 ==
 

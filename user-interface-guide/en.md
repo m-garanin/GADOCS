@@ -1,5 +1,3 @@
-![](w1.jpg)
-
 **User Interface Guide**
 ===
 

@@ -1,5 +1,3 @@
-![](Header_Trial.jpg)
-
 **Trial Info**
 ==
 TRY BEFORE BUY

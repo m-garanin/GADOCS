@@ -1,4 +1,3 @@
-![](x1.jpg)
 **Windows WiFi issue**
 ==
 

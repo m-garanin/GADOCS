@@ -1,5 +1,3 @@
-![](e1.jpg)
-
 **Video & Audio Issues**
 ===
 Sometimes new clients wrote

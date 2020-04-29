@@ -1,5 +1,3 @@
-![](ww1.jpg)
-
 **Proxy Addon**
 ==
 

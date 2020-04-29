@@ -1,5 +1,3 @@
-![](r1.jpg)
-
 **Direct connection from Internet**
 ===
 
