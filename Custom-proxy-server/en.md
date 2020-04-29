@@ -1,5 +1,3 @@
-![](y1.jpg)
-
 **Custom Proxy Server**
 ==
 

@@ -1,5 +1,3 @@
-![](t1.jpg)
-
 **Direct connection: easy way for check**
 ==
 

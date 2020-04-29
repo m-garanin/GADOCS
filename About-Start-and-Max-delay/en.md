@@ -1,5 +1,3 @@
-![](a1.png)
-
 **About Start and Max delay**
 ==
 
