@@ -1,11 +1,18 @@
 #!/usr/bin/env python
 import os
+from time import time
 from shutil import copyfile
+
+from flask import Flask
+from flask import render_template
 
 import markdown2
 
 G_PATH = "../CONTENT"
 G_OUT = "../OUT"
+
+app = Flask(__name__)
+
 
 def start():
     
@@ -50,7 +57,11 @@ def convert_md(paths, fname):
     
     html_dst = os.path.join(G_OUT, *paths) + "/" +  lang_fname
     
-    html = markdown2.markdown_path(md_path)
+    content = markdown2.markdown_path(md_path)
+    
+    data = dict(content=content)
+    html = render_page('post.html', data)
+    
     #print html
     f = open(html_dst, "wb")
     f.write(html.encode('utf-8'))
@@ -64,7 +75,20 @@ def convert_image(paths, fname):
     #print src, dst
     copyfile(src, dst)
 
+
+def render_page(tmpl_name, pg):
+    ctx = {'time': int(time())}
+    
+    for k,v in pg.items():
+        ctx[k.upper()] = v
+    
+    html = render_template(tmpl_name, **ctx)
+    
+    return html
+
+
+    
 if __name__ == '__main__':
-    #with app.app_context():
-    start()
+    with app.app_context():
+        start()
 
