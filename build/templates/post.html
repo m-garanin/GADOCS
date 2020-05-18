@@ -3,9 +3,30 @@
 
 
 {% block content %}
+<div class="row">
 
-{{ CONTENT|safe }}
+  <div class="col-3" style="background11:red;">
 
+    <div class="list-group">
+      <a href="#" class="list-group-item list-group-item-action ">
+	Cras justo odio
+      </a>
+      <a href="#" class="list-group-item list-group-item-action active list-group-item-success">Dapibus ac facilisis in</a>
+      <a href="#" class="list-group-item list-group-item-action list-group-item-success">Morbi leo risus</a>
+      <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
+    </div>
+    
+    
+  </div>
+
+  <div class="col-9">
+    
+    {{ CONTENT|safe }}
+
+  </div>
+
+
+</div>
 {% endblock %}
 
 
