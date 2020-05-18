@@ -68,8 +68,9 @@ def s1_convert_md(paths, fname):
     else:
         lang_fname = fname.replace(".md", ".html")
     
-    md_text = open(md_path, 'r').read()
+    md_text = open(md_path, 'rb').read().decode('utf-8')
     title = get_title(md_text)
+    
     content = markdown2.markdown_path(md_path)
     add_post(post_name, lang, title, content)
     
@@ -84,12 +85,12 @@ def s1_convert_image(paths, fname):
 def get_title(txt):
     "read title from text (as first line)"
     parts = txt.split("\n")
-    title = ""
+    title = ''
     for p in parts:
         if p:
             title = p
             break
-    title = title.replace("**","").replace("#", "").strip()
+    title = title.replace("**",'').replace("#", '').strip()
     return title
 
 
@@ -114,7 +115,7 @@ def s2_render_page(pname, langs):
 
         
 def s2_render_lang(pname, lng, title, content):
-    print lng, title
+    print lng, title, type(title)#, title.encode('unicode')
 
     if lng == "en":
         lang_fname = "index.html"
@@ -123,6 +124,7 @@ def s2_render_lang(pname, lng, title, content):
     
     html_dst = os.path.join(G_OUT, pname) + "/" +  lang_fname
 
+    
     data = dict(title=title, content=content)
     html = render_page('post.html', data)
     
