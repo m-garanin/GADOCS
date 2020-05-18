@@ -8,6 +8,8 @@ from flask import render_template
 
 import markdown2
 
+from sections import GROUPS
+
 G_PATH = "../CONTENT"
 G_OUT = "../OUT"
 
@@ -15,7 +17,7 @@ app = Flask(__name__)
 
 
 def start():
-    
+    #print GROUPS
     for root, dirs, files in os.walk(G_PATH):
         convert_one_folder(root, files)
         
