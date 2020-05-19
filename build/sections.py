@@ -1,6 +1,8 @@
 
-def add(lst, inf):
-    lst.append(inf)
+def add(lst, pname):
+    pname = pname.lower()
+    lst.append(pname)
+    G_POST_GROUP[pname] = lst
     
 SRT = []
 RTMP = []
@@ -10,11 +12,15 @@ GROUPS = [('SRT Section', SRT),
           ('RTMP Section', RTMP),
           ('Other',SUPP)]
 
+G_POST_GROUP = {} # {post: group}
+
+
 # SRT
 add(SRT, 'srt-cross-line')
 add(SRT, 'srt-custom-proxy')
 add(SRT, 'srt-direct-connection')
 add(SRT, 'srt-trial-info')
+add(SRT, 'srt-set-proxy-addon')
 
 # RTMP
 add(RTMP, 'rtmp-About-Start-and-Max-delay')
@@ -30,7 +36,6 @@ add(RTMP, 'rtmp-Video-&-audio-issues')
 add(RTMP, 'rtmp-VidiU-Teradek-connection-issue')
 add(RTMP, 'rtmp-Windows-WiFi-issue')
 
-add(RTMP, 'rtmp-set-proxy-addon')
 add(RTMP, 'rtmp-step-by-step')
 add(RTMP, 'rtmp-user-interface-guide')
 

@@ -5,15 +5,28 @@
 {% block content %}
 <div class="row">
 
-  <div class="col-3" style="background11:red;">
+  <div class="col-3" style="background11:red;font-size:12px;">
 
     <div class="list-group">
+      <!--
       <a href="#" class="list-group-item list-group-item-action ">
 	Cras justo odio
       </a>
       <a href="#" class="list-group-item list-group-item-action active list-group-item-success">Dapibus ac facilisis in</a>
       <a href="#" class="list-group-item list-group-item-action list-group-item-success">Morbi leo risus</a>
-      <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
+      -->
+      
+      {% for item in GROUP %}
+      {% with info = TR(item) %}
+
+      {% if info[2] %}
+      <a href="#" class="list-group-item list-group-item-action list-group-item-success">{{ info[0] }}</a>
+      {% else %}
+      <a href="{{ info[1] }}" class="list-group-item list-group-item-action">{{ info[0] }}</a>
+      {% endif %}
+      
+      {% endwith %}
+      {% endfor %}
     </div>
     
     

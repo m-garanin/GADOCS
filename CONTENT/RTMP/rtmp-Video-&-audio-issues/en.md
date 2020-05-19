@@ -12,21 +12,20 @@ Let me explain reasons and solutions.
 By default the app uses “auto” for “Input FPS”. This means the app tries auto detect fps for incoming streaming. If the app do this incorrect then result will be wrong.
 
 ![](e2.png)
+*setup “auto” FPS detection*
 
-setup “auto” FPS detection
 
 Please check “input fps” info during process. It should be same as original FPS.
 
 ![](e3.png)
-
 detected “input fps”
 
 **SOLUTION**: if you see incorrect detection (for example 30 instead 25 ) then please setup “Input FPS” manually to correct value.
 
 ![](e4.png)
-
 manually setup
-##
+
+
 **Reason 2: heavy stream for your connection**
 
 For example: encoder sent 20Mbs stream but Studio has 10Mbs connection only.
