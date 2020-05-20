@@ -33,6 +33,9 @@
   </div>
 
   <div class="col-9">
+    {% for pr in PRODUCTS %}
+    <span class="badge badge-primary">{{ pr }}</span>
+    {% endfor %}
     
     {{ CONTENT|safe }}
 

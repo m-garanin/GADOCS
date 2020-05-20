@@ -1,0 +1,12 @@
+<div class="col-{{ cols }}">
+  
+  <h5 class="card-title">{{ title }} </h5>
+  <ul class="list-unstyled">
+    {% for item in items  %}
+    {% with info = TR(item) %}
+
+    <li><a href="{{ info[1] }}">{{ info[0] }}</a></li>
+    {% endwith %}
+    {% endfor %}
+  </ul>
+</div>

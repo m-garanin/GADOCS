@@ -1,4 +1,4 @@
-**SRT: Cross Line. Power Feature for Remote Production.**
+**Cross Line. Power Feature for Remote Production.**
 ==
 
 For each Lines inside SRTMiniServer you can setup “Cross Line”. 

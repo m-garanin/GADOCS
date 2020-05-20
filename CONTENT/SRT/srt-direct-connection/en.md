@@ -1,4 +1,4 @@
-**SRT: direct connection from Internet**
+**direct connection from Internet**
 ==
 *If you have not public IP or have not ability for port-forwarding then please use other way* – [ProxyAddon](http://help.garaninapps.com/2020/02/12/srt-proxy-addon/)
 

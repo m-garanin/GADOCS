@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+<div class="row mb-3">
+  <div class="col-12">
+    <h1>SRT Tools</h1>
+    <hr/>
+    <!--
+    <div class="row mb-3">
+      {% with title='Blog', cols=4,  items=SRT%} 
+      {% include "inc_horiz.html" %}
+      {% endwith %}
+    </div>
+    -->
+    <div class="row mb-3">
+      {% with cols=6, title='SRT MiniServer', items=SRT%} 
+      {% include "inc_list.html" %}
+      {% endwith %}
+    </div>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-12">
+    <h1>RTMP Tools</h1>
+    <hr/>
+    <!--
+    <div class="row mb-3">
+      {% with title='Blog', cols=4,  items=SRT%} 
+      {% include "inc_horiz.html" %}
+      {% endwith %}
+    </div>
+    -->
+    <div class="row mb-3">
+      {% with cols=6, title='RTMP MiniServer', items=RTMP %} 
+      {% include "inc_list.html" %}
+      {% endwith %}
+    </div>
+  </div>
+</div>
+
+
+
+
+
+{% endblock %}
+
+

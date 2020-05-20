@@ -1,3 +1,3 @@
-**SRT Custom proxy**
+**Custom proxy**
 ===
 custom proxy will be allowed soon.

@@ -1,0 +1,15 @@
+
+{% if title %}
+<div class="col-12">
+  <h5 class="card-title">{{ title }} </h5>
+</div>
+{% endif%}
+
+{% for item in items  %}
+{% with info = TR(item) %}
+<div class="col-{{ cols }} mb-3">
+     <a href="{{ info[1] }}">* {{ info[0] }}</a>
+</div>
+
+{% endwith %}
+{% endfor %}

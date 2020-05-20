@@ -1,4 +1,4 @@
- **SRT Proxy Addon**
+ ** Proxy Addon**
 ============
  SRT ProxyAddon is easy way for accept signal in Studio from Location.
 It does not require dedicated IP and port-forwarding manipulation.

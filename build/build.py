@@ -8,7 +8,8 @@ from flask import render_template
 
 import markdown2
 
-from sections import G_POST_GROUP
+#from sections import G_POST_GROUP
+import sections
 
 
 G_PATH = "../CONTENT"
@@ -28,6 +29,10 @@ def start():
     #print G_POSTS
     for pname, langs in G_POSTS.items():
         s2_render_page(pname, langs)
+
+    # STAGE 3 (generate index)
+    s3_generate_common_pages()
+    
     
 #--------------------------------------------------
 #  STAGE 1
@@ -123,19 +128,11 @@ def s2_render_lang(pname, lng, title, content):
     print lng, title, type(title)#, title.encode('unicode')
 
     def tr(post_name):
-        """ return (title, url) for postname in lng
+        """ return (title, url, True|False) for postname in lng
         url is '/post-name/index.html' or '/post-name/ru.html'
         """
-        inf = G_POSTS[post_name]
-        linfo = inf.get(lng, None)
-        if not linfo:
-            linfo = inf.get('en')
-            url = '/%s/index.html' % post_name
-        else:
-            url = '/%s/%s.html' % (post_name, lng if lng !='en' else 'index')
-        
-        
-        return (linfo[0], url, post_name==pname)
+        (title, url) = global_tr(lng, post_name)
+        return (title, url, post_name==pname)
     
     
     if lng == "en":
@@ -145,19 +142,40 @@ def s2_render_lang(pname, lng, title, content):
     
     html_dst = os.path.join(G_OUT, pname) + "/" +  lang_fname
 
-    group = G_POST_GROUP.get(pname,[])
+    group = sections.G_POST_GROUP.get(pname,[])
+
+    products = sections.G_POST_PRODUCTS.get(pname,[])
+    data = dict(title=title, content=content, group=group, tr=tr, products=products)
+    render_page_to_file(html_dst, 'post.html', data)
+
+
+#--------------------------------------------------
+#  STAGE 3
+#--------------------------------------------------
+def s3_generate_common_pages():
+    data = {'RTMP': sections.RTMP,
+            'SRT': sections.SRT,
+            'TR': lambda x:global_tr('en', x)
+    }
     
-    data = dict(title=title, content=content, group=group, tr=tr)
-    html = render_page('post.html', data)
     
-    #print html
-    f = open(html_dst, "wb")
+    html_dst = os.path.join(G_OUT, 'index.html')
+    render_page_to_file(html_dst, 'index.html', data)
+
+
+
+
+    
+#--------------------------------------------------
+def render_page_to_file(fname, tmpl_name, pg):
+    html = render_page(tmpl_name, pg)
+
+    f = open(fname, "wb")
     f.write(html.encode('utf-8'))
     f.close()
+    return
 
 
-    
-    
 def render_page(tmpl_name, pg):
     ctx = {'time': int(time())}
     
@@ -167,6 +185,22 @@ def render_page(tmpl_name, pg):
     html = render_template(tmpl_name, **ctx)
     
     return html
+
+
+def global_tr(lng, post_name):
+    """ return (title, url) for postname in lng
+    url is '/post-name/index.html' or '/post-name/ru.html'
+    """
+    inf = G_POSTS[post_name]
+    linfo = inf.get(lng, None)
+    if not linfo:
+        linfo = inf.get('en')
+        url = '/%s/index.html' % post_name
+    else:
+        url = '/%s/%s.html' % (post_name, lng if lng !='en' else 'index')
+            
+        
+    return (linfo[0], url)
 
 
     
