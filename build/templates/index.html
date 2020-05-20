@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 
 
-
 {% block content %}
+
+
+
 <div class="row mb-3">
   <div class="col-12">
     <h1>SRT Tools</h1>
@@ -15,7 +17,7 @@
     </div>
     -->
     <div class="row mb-3">
-      {% with cols=6, title='SRT MiniServer', items=SRT%} 
+      {% with cols=6, title='SRT MiniServer', items=S.SRT %} 
       {% include "inc_list.html" %}
       {% endwith %}
     </div>
@@ -26,22 +28,19 @@
   <div class="col-12">
     <h1>RTMP Tools</h1>
     <hr/>
-    <!--
     <div class="row mb-3">
-      {% with title='Blog', cols=4,  items=SRT%} 
+      {% with cols=4,  items=S.RTMP_BLOG %} 
       {% include "inc_horiz.html" %}
       {% endwith %}
     </div>
-    -->
+
     <div class="row mb-3">
-      {% with cols=6, title='RTMP MiniServer', items=RTMP %} 
+      {% with cols=6, title='RTMP MiniServer', items=S.RTMP %} 
       {% include "inc_list.html" %}
       {% endwith %}
     </div>
   </div>
 </div>
-
-
 
 
 

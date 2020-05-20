@@ -6,7 +6,10 @@ def add(lst, pname, products):
     G_POST_PRODUCTS[pname] = products.split(',')
     
 SRT = []
+SRT_BLOG = []
+
 RTMP = []
+RTMP_BLOG = []
 SUPP = []
 
 GROUPS = [('SRT Section', SRT),
@@ -30,6 +33,11 @@ add(SRT, 'srt-direct-connection', srt_server)
 add(SRT, 'srt-trial-info', srt_server)
 add(SRT, 'srt-set-proxy-addon', srt_server)
 
+# SRT-BLOG
+add(SRT_BLOG, 'SRT-Cross-Line-Feature', srt_all)
+add(SRT_BLOG, 'SRT-Short-review', srt_all)
+
+
 
 # RTMP
 add(RTMP, 'rtmp-About-Start-and-Max-delay', rtmp_server)
@@ -47,6 +55,14 @@ add(RTMP, 'rtmp-Windows-WiFi-issue', rtmp_server)
 
 add(RTMP, 'rtmp-step-by-step', rtmp_server)
 add(RTMP, 'rtmp-user-interface-guide', rtmp_server)
+
+# RTMP-BLOG
+add(RTMP_BLOG, 'Cases-of-using-RTMPMiniServer', rtmp_server)
+add(RTMP_BLOG, 'How-RTMPMiniServer-differs-from-other-servers', rtmp_server)
+add(RTMP_BLOG, 'LifeHacks-for-streamers', 'NTRStreamer')
+add(RTMP_BLOG, 'Proxy-add-on-for-RTMPMiniServer', rtmp_server)
+
+
 
 # SUPPORT
 add(SUPP, 'support-How-to-make-dump-of-stream-for-support', 'SRT MiniServer, RTMP MiniServer')

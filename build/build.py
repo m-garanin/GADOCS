@@ -145,7 +145,7 @@ def s2_render_lang(pname, lng, title, content):
     group = sections.G_POST_GROUP.get(pname,[])
 
     products = sections.G_POST_PRODUCTS.get(pname,[])
-    data = dict(title=title, content=content, group=group, tr=tr, products=products)
+    data = dict(title=title, pname=pname, content=content, group=group, tr=tr, products=products)
     render_page_to_file(html_dst, 'post.html', data)
 
 
@@ -153,10 +153,8 @@ def s2_render_lang(pname, lng, title, content):
 #  STAGE 3
 #--------------------------------------------------
 def s3_generate_common_pages():
-    data = {'RTMP': sections.RTMP,
-            'SRT': sections.SRT,
-            'TR': lambda x:global_tr('en', x)
-    }
+    data = {'S': sections,
+            'TR': lambda x:global_tr('en', x) }
     
     
     html_dst = os.path.join(G_OUT, 'index.html')
